@@ -11,24 +11,20 @@ import RealmSwift
 
 class TreeNode: Object {
     dynamic var idTreeNode = Int()
-    dynamic var CardId = Int()
-    dynamic var Back:TreeNode? = nil
-    dynamic var Right:TreeNode? = nil
-    dynamic var Left:TreeNode? = nil
+    var CardId : Card?
+    var Back: TreeNode? = nil
+    var Right:TreeNode? = nil
+    var Left:TreeNode? = nil
     
     override static func primaryKey() -> String?   {
         return "idTreeNode"
     }
     
     static func getTreeNodeObject(
-        idTreeNode: Int, CardId: Int, Back: [TreeNode], Right: [TreeNode], Left: [TreeNode]) -> TreeNode {
+        idTreeNode: Int, CardId: Card) -> TreeNode {
         let tree = TreeNode()
         tree.CardId = CardId
         tree.idTreeNode = idTreeNode
-        tree.Back?.CardId
-        tree.Right?.CardId
-        tree.Left?.CardId
         return tree
     }
 }
-

@@ -13,20 +13,19 @@ class Card: Object {
     dynamic var idCard = Int()
     dynamic var idLayout = Int()
     dynamic var Description = String()
-    dynamic var UData = UserData()
+    var UData : UserData?
     
     override static func primaryKey() -> String?   {
         return "idCard"
     }
     
     static func getCardObject(
-        idCard: Int, idLayout: Int, Description: String, UData: [UserData]) -> Card {
+        idCard: Int, idLayout: Int, Description: String, UData: UserData) -> Card {
         let card = Card()
         card.idCard = idCard
         card.idLayout = idLayout
         card.Description = Description
-        card.UData = UserData()
+        card.UData = UData
         return card
     }
 }
-	
